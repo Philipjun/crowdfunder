@@ -12,10 +12,15 @@ class BreakpointsController < ApplicationController
 
   def create
     @breakpoint = @project.breakpoints.build(breakpoint_params)
-    if @breakpoint.save
-      redirect_to @project
-    else
-      render 'new'
+
+    respond_to do |format|
+      if @breakpoint.save
+        format.html { redirect_to @project }
+        format.js {}
+      else
+        format.html { render 'new' }
+        format.js {}
+      end
     end
   end
 
