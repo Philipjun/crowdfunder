@@ -1,8 +1,8 @@
 class BreakpointsController < ApplicationController
+  before_filter :load_project => :only => [:index, :new, :create]
 
-   def index
+  def index
     @breakpoints = Breakpoint.all
-    
   end
 
   def new
@@ -11,7 +11,7 @@ class BreakpointsController < ApplicationController
 
 
   def create
-    @breakpoint = Breakpoint.new(breakpoint_params)
+    @breakpoint = @project.breakpoint.build(breakpoint_params)
     if @breakpoint.save
       redirect_to @breakpoint
     else
@@ -24,5 +24,8 @@ private
     params.require(:breakpoint).permit(:pledge_title, :info, :pledge)
   end
 
+  def load_project
+    @project= Project.find(params[:project_id])
+  end
 
 end
