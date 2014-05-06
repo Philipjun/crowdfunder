@@ -21,7 +21,7 @@ class BreakpointsController < ApplicationController
 
 private
   def breakpoint_params
-    params.require(:breakpoint).permit(:pledge_name, :info, :pledge)
+    params.require(:breakpoint).permit(:pledge_title, :info, :pledge)
   end
 
 
