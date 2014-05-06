@@ -13,8 +13,14 @@ Project.create ({
 
   })
 
-Breakpoint.create ({
-  pledge_title: 'Rainforest prime',
-  info: 'Prime shipping',
-  pledge: 100
+# Breakpoint.create ({
+#   pledge_title: 'Rainforest prime',
+#   info: 'Prime shipping',
+#   pledge: 100
+#   })
+
+Project.create ({
+  title: 'SeatYourself',
+  description: 'Find and make restaurant reservations',
+  goal: 50000
   })

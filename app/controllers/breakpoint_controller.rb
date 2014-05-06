@@ -1,4 +1,4 @@
-class BreakpointController < ApplicationController
+class BreakpointsController < ApplicationController
 
    def index
     @breakpoints = Breakpoint.all

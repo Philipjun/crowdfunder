@@ -2,11 +2,11 @@
 Description: <%= @project.description %> <br />
 Goal number: <%= @project.goal %> <br />
 
+
 <% @breakpoints.each do |breakpoint| %>
-  <%= breakpoint.pledge_name %>
+  <%= breakpoint.pledge_title %>
   <%= breakpoint.info %>
   <%= breakpoint.pledge %>
-
-  <% end %>
+<% end %>
 
 
