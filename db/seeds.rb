@@ -12,3 +12,9 @@ Project.create ({
   goal: 10000
 
   })
+
+Breakpoint.create ({
+  pledge_title: 'Rainforest prime',
+  info: 'Prime shipping',
+  pledge: 100
+  })

@@ -2,6 +2,7 @@ class BreakpointController < ApplicationController
 
    def index
     @breakpoints = Breakpoint.all
+    
   end
 
   def new
