@@ -1,7 +1,8 @@
 <%= link_to "Back to Projects", projects_url %><br/>
-<h1><%= @project.title %> </h1><br />
+<h1><%= @project.title %> </h1>
 Description: <%= @project.description %> <br />
 Goal number: <%= @project.goal %> <br />
+Total pledged: <%= @project.pledge_total %>
 
 <%= form_for [@project, @breakpoint] do |f| %>
 	<div class= "field">
@@ -22,9 +23,11 @@ Goal number: <%= @project.goal %> <br />
 <% end %>
 
 <% @project.breakpoints.each do |breakpoint| %>
-  <h2><%= breakpoint.pledge_title %></h2><br/>
-  <%= breakpoint.info %><br/>
-  <%= breakpoint.pledge %><br/>
+  <div class= "pledge">
+	  <h2><%= breakpoint.pledge_title %></h2>
+	  <%= breakpoint.info %><br/>
+	  <%= breakpoint.pledge %><br/>
+	</div>
 <% end %>
 
 
