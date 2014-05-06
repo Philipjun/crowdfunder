@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506171226) do
+ActiveRecord::Schema.define(version: 20140506174626) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "breakpoints", force: true do |t|
+    t.integer  "pledge"
+    t.text     "info"
+    t.string   "pledge_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", force: true do |t|
     t.string   "title"
