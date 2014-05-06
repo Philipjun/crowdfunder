@@ -1,5 +1,5 @@
 class BreakpointsController < ApplicationController
-  before_filter :load_project => :only => [:index, :new, :create]
+  before_filter :load_project, :only => [:index, :new, :create]
 
   def index
     @breakpoints = Breakpoint.all
@@ -11,9 +11,9 @@ class BreakpointsController < ApplicationController
 
 
   def create
-    @breakpoint = @project.breakpoint.build(breakpoint_params)
+    @breakpoint = @project.breakpoints.build(breakpoint_params)
     if @breakpoint.save
-      redirect_to @breakpoint
+      redirect_to @project
     else
       render 'new'
     end
