@@ -6,7 +6,8 @@ class PledgesController < ApplicationController
 
 	def create
 		@pledge = Pledge.new(pledge_params)
-		
+		@pledge.user_id = current_user.id
+
     respond_to do |format|
 			if @pledge.save
         format.html { redirect_to @project, notice: 'Review added.' }
@@ -21,7 +22,7 @@ class PledgesController < ApplicationController
 
   private
   def pledge_params
-  	params.require(:pledge).permit(:project_id, :breakpoint_id)
+  	params.require(:pledge).permit(:project_id, :breakpoint_id, :user_id)
   end
 
   def load_project
