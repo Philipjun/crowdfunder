@@ -37,20 +37,22 @@ Total pledged:
 	</div>
 <% end %>
 
-<% @project.breakpoints.each do |breakpoint| %>
-  <div class= "pledge">
-	  <h2><%= breakpoint.pledge_title %></h2>
-	  <%= breakpoint.info %><br/>
-	  <p id="amount"><%= breakpoint.pledge %></p><br/>
-	</div>
+<div id="projectBreakpoint">
+	<% @project.breakpoints.each do |breakpoint| %>
+	  <div class= "pledge">
+		  <h2><%= breakpoint.pledge_title %></h2>
+		  <%= breakpoint.info %><br/>
+		  <p id="amount"><%= breakpoint.pledge %></p><br/>
+		<!-- </div> -->
 
-	<%= form_for [@project, @pledge], :remote => true do |f| %>
-	  <%= submit_tag :Pledge %>	
-	  <%= f.hidden_field :project_id, :value => @project.id %>
-	  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+	  <!-- <div class="pledgeSub"> -->
+			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
+			  <%= submit_tag :Pledge %>	
+			  <%= f.hidden_field :project_id, :value => @project.id %>
+			  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+			<% end %>
+	  </div>
 	<% end %>
-
-<% end %>
-
+</div>
 
 

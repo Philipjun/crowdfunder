@@ -4,8 +4,13 @@
 
 $(document).ready(function() {
 	var total = 0
-  $(".pledge").click(function() {
-    var amount = Number($(this).children('#amount').text());
+  $(".pledgeSubmit").click(function() {
+    // var amount = Number($(this).children('#amount').text());
+    var amount = Number($(this).parent('#amount').text());
+    // need to select prev #amount and get inner html or text
+    // console.log($(this).parent().parent().find('#amount')	);
+    console.log($(this).parent().children().prev('p'));
+
     total += amount;
     $("#pledgeTotal").text(total);
   });
