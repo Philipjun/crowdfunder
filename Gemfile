@@ -39,6 +39,8 @@ gem 'quiet_assets'
 
 gem 'haml'
 
+gem 'sorcery'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
