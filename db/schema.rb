@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140507214034) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pledge_total"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "users", force: true do |t|
