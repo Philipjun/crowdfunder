@@ -44,7 +44,7 @@ Total pledged:
 	  <p id="amount"><%= breakpoint.pledge %></p><br/>
 	</div>
 
-	<%= form_for [@project, @pledge]  do |f| %>
+	<%= form_for [@project, @pledge], :remote => true do |f| %>
 	  <%= submit_tag :Pledge %>	
 	  <%= f.hidden_field :project_id, :value => @project.id %>
 	  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
