@@ -28,6 +28,13 @@ Total pledged: <div id="pledgeTotal"><%= @project.pledge_total %></div>
 	  <%= breakpoint.info %><br/>
 	  <p id="amount"><%= breakpoint.pledge %></p><br/>
 	</div>
+
+	<%= form_for [@project, @pledge]  do |f| %>
+	  <%= submit_tag :Pledge %>	
+	  <%= f.hidden_field :project_id, :value => @project.id %>
+	  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+	<% end %>
+
 <% end %>
 
 

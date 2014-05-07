@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @breakpoints = Breakpoint.all
     @breakpoint = Breakpoint.new
+    @pledge = Pledge.new
   end
 
   def destroy
