@@ -6,7 +6,7 @@ Goal number: <%= @project.goal %> <br />
 Total pledged: 
 <div id="pledgeTotal">
 	<% if Pledge.first == nil %>
-	    <%= 0 %>
+	    <%= 0 %>	
 	  <% else %>
 	    <% if @project.pledge_total == nil%>
 	      <% total = 0 %>

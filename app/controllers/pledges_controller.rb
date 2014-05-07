@@ -14,6 +14,7 @@ class PledgesController < ApplicationController
         format.js {} 
       end
     end
+
 	end
 
   private
