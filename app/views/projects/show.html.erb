@@ -2,7 +2,7 @@
 <h1><%= @project.title %> </h1>
 Description: <%= @project.description %> <br />
 Goal number: <%= @project.goal %> <br />
-Total pledged: <%= @project.pledge_total %>
+Total pledged: <div id="pledgeTotal"><%= @project.pledge_total %></div>
 
 <%= form_for [@project, @breakpoint] do |f| %>
 	<div class= "field">

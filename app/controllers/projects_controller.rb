@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    params.require(:project).permit(:title, :description, :goal, breakpoints_attributes: [:id, :pledge_title, :info, :pledge, :_destroy])
+    params.require(:project).permit(:title, :description, :goal, :pledge_total, breakpoints_attributes: [:id, :pledge_title, :info, :pledge, :_destroy])
   end
 
 

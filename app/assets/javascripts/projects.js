@@ -3,8 +3,10 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
+	var total = 0
   $(".pledge").click(function() {
     var amount = Number($(this).children('#amount').text());
-    console.log(amount);
+    total += amount;
+    $("#pledgeTotal").text(total);
   });
 });
