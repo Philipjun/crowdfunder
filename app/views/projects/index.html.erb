@@ -1,4 +1,5 @@
 <h1> Projects </h1>
+<%= link_to "Post a new Project", new_project_path %>
 <% @projects.each do |project| %>
 <p>
 <%= link_to project.title, project %><br />

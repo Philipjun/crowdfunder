@@ -11,6 +11,14 @@
     = f.label :goal
     %br
     = f.number_field :goal
+  .field
+    = f.label :start_date
+    %br
+    = f.datetime_select :start_date
+  .field
+    = f.label :end_date
+    %br
+    = f.datetime_select :end_date
   %h3 Breakpoints
   #breakpoints
     = f.fields_for :breakpoints do |breakpoint|

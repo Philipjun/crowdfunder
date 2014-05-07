@@ -19,6 +19,13 @@ Total pledged:
       <%= total %>
 	<% end %>
 </div>
+Start Date: <%= @project.start_date %> <br/>
+End Date: <%= @project.end_date %>
+
+<div id= "timeRemaining">
+	<% time_left = (@project.end_date - @project.start_date)/(86400) %>
+	There is <%= time_left %> days remaining to back this project!
+</div>
 
 <%= form_for [@project, @breakpoint] do |f| %>
 	<div class= "field">
@@ -42,7 +49,7 @@ Total pledged:
 	<% @project.breakpoints.each do |breakpoint| %>
 	  <div class= "pledge">
 		  <h2><%= breakpoint.pledge_title %></h2>
-		  <%= breakpoint.info %><br/>
+		  <%= breakpoint.info %>
 		  <p id="amount"><%= breakpoint.pledge %></p><br/>
 		<!-- </div> -->
 
