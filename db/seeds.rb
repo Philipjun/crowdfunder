@@ -6,19 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Project.create ({
-  title: 'Rainforest',
-  description: 'Amazon clone',
-  goal: 10000,
-  start_date: DateTime.new(2009,9,1,19),
-  end_date: DateTime.new(2009,9,5,19)
-  })
 
-# Breakpoint.create ({
-#   pledge_title: 'Rainforest prime',
-#   info: 'Prime shipping',
-#   pledge: 100
-#   })
 array = ["Art", "Comics", "Design", "Film & Video", "Games", "Music", "Photography", "Technology"]
 
 100.times do
