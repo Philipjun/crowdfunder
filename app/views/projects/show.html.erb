@@ -13,15 +13,15 @@
 			<% if Pledge.first == nil %>
 
 				<%= 0 %>	
-			
+			  <% total = 0 %>
 			<% else %>
-				<% total = @project.pledge_total %>
+				<% total = 0 %>
 			
 
-			<% @project.breakpoints.each do |breakpoint| %>
-				<% total += breakpoint.pledge * breakpoint.pledges.count %>  
-			<% end %>
-			  <%= total %>
+				<% @project.breakpoints.each do |breakpoint| %>
+					<% total += breakpoint.pledge * breakpoint.pledges.count %>  
+				<% end %>
+				<%= total %>
 			<% end %>
 			
 
