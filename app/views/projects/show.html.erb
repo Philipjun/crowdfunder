@@ -1,6 +1,12 @@
 <%= link_to "Back to Projects", projects_url %><br/>
 <%= Time.now %>
+
+<div class="small-3 small-centered columns">
 <h1><%= @project.title %> </h1>
+</div>
+
+<div class="right-panel">
+
 Description: <%= @project.description %> <br />
 Goal number: <%= @project.goal %> <br />
 Total pledged: 
@@ -25,6 +31,8 @@ End Date: <%= @project.end_date %>
 <div id= "timeRemaining">
 	<% time_left = (@project.end_date - @project.start_date)/(86400) %>
 	There is <%= time_left %> days remaining to back this project!
+</div>
+
 </div>
 
 <%= form_for [@project, @breakpoint] do |f| %>

@@ -13,3 +13,13 @@
 
  *= require_tree .
  */
+
+.right-panel{
+  float: right;
+  position: 100px 100px 200px 200px;
+  padding-right: 10px
+  background-color: red;
+  height: 100%;
+  width: 300px;
+
+}
