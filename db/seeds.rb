@@ -19,11 +19,15 @@ Project.create ({
 #   info: 'Prime shipping',
 #   pledge: 100
 #   })
+array = ["Art", "Comics", "Design", "Film & Video", "Games", "Music", "Photography", "Technology"]
 
-Project.create ({
-  title: 'SeatYourself',
-  description: 'Find and make restaurant reservations',
-  goal: 50000,
-  start_date: DateTime.new(2014,4,20,19),
-  end_date: DateTime.new(2014,6,1,19)
-  })
+100.times do
+  Project.create ({
+    title: Faker::Company.catch_phrase,
+    description: Faker::Company.bs,
+    goal: rand(10000..100000),
+    category: array[rand(0..(array.length - 1))],
+    start_date: DateTime.new(2014,4,20,19),
+    end_date: DateTime.new(2014,6,1,19)
+    })
+end
