@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :pledges
   has_many :breakpoints, through: :pledges
   has_many :projects, through: :pledges
+  has_many :comments
+ 
 
   validates :password, :password_confirmation, presence: true
   validates :password, confirmation: true
