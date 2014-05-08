@@ -37,6 +37,9 @@ class ProjectsController < ApplicationController
     @breakpoints = Breakpoint.all
     @breakpoint = Breakpoint.new
     @pledge = Pledge.new
+    if current_user
+      @comment = @project.comments.build
+    end
   end
 
   def destroy
