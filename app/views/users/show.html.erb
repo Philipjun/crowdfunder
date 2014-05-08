@@ -1,6 +1,9 @@
 <%= @user.email %></br>
 <% @user.projects.each do |project| %>
   <p> Project </p>
-  <%= project.title %>
-
+  <%= project.title %><br/>
+  <p> Pledges </p>
+  <% project.breakpoints.each do |breakpoint| %>
+    <%= breakpoint.pledge %>
+  <% end %>
 <% end %>
