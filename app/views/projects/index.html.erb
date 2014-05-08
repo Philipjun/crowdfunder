@@ -1,5 +1,8 @@
 <h1> Projects </h1>
 <%= link_to "Post a new Project", new_project_path %>
+
+
+
 </br>
 <%= form_tag projects_path, method: :get, authentication: false, id: 'category-select' do %>
   <%= select_tag :search, options_for_select([["Art","Art"], ["Comics", "Comics"], ["Design", "Design"], ["Film & Video", "Film & Video"], ["Games", "Games"], ["Music", "Music"], ["Photography", "Photography"], ["Technology", "Technology"]], params[:search]) %>
@@ -14,3 +17,10 @@
 </p>
 
 <% end %>
+
+<div id="projects">
+  <%= render @projects %>
+</div>
+
+<!-- outputs several pagination links such as « First ‹ Prev ... 2 3 4 5 6 7 8 9 10 ... Next › Last » -->
+<%= paginate @projects %>

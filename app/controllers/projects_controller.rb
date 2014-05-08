@@ -7,7 +7,14 @@ class ProjectsController < ApplicationController
     else
       Project.all
    end
+   @projects = Project.order('projects.end_date DESC').page(params[:page])
+
+     respond_to do |format|
+    format.js # allows the controller to respond to Javascript
+    format.html
   end
+  end
+
 
   def new
     @project = Project.new
