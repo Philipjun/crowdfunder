@@ -15,6 +15,10 @@
     %br
     = f.number_field :goal
   .field
+    = f.label :category
+    %br
+    = f.select :category, ["Art", "Comics", "Design", "Film & Video", "Games", "Music", "Photography", "Technology"], :prompt => "Select One"
+  .field
     = f.label :start_date
     %br
     = f.datetime_select :start_date
