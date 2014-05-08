@@ -22,7 +22,6 @@
 			  <!-- Calculation for total pledged and amount of backers -->
 			  <% @project.breakpoints.each do |breakpoint| %>
 			    <% total += breakpoint.pledge * breakpoint.pledges.count %>  
-			    <% pledge_total += breakpoint.pledges.count %>
 			  <% end %>
 			<% end %>	
 			<%= total %>
