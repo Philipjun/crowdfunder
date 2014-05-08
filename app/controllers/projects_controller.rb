@@ -2,7 +2,11 @@ class ProjectsController < ApplicationController
   skip_before_filter :require_login, only: :index
 
   def index
-    @projects = Project.all
+    @projects = if params[:search]
+      Project.where(category:params[:search])
+    else
+      Project.all
+   end
   end
 
   def new
