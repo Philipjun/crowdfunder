@@ -49,3 +49,36 @@ body {
   display: table;
   clear: both;
 }
+
+.action {
+  clear: both;
+  margin-left: 15px;
+}
+
+.projects {
+  clear: both;
+}
+
+#project_start_date_1i {
+  width: 17%;
+  margin-right: 1%;
+}
+
+#project_start_date_2i {
+  width: 17%;
+  margin-right: 1%
+}
+
+#project_start_date_3i {
+  width: 17%;
+  margin-right: 1%
+}
+
+#project_start_date_4i {
+  width: 17%;
+  margin-right: 1%
+}
+
+#project_start_date_5i {
+  width: 17%;
+}

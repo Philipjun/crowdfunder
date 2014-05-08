@@ -2,30 +2,36 @@
 
 
 = form_for @project do |f|
-  .field
+  .field.row
+  .large-9.columns
     = f.label :title
     %br
     = f.text_field :title
-  .field
+  .field.row
+  .large-9.columns
     = f.label :description
     %br
     = f.text_area :description
-  .field
+  .field.row
+  .large-9.columns
     = f.label :goal
     %br
     = f.number_field :goal
-  .field
+  .field.row
+  .large-9.columns
     = f.label :category
     %br
     = f.select :category, ["Art", "Comics", "Design", "Film & Video", "Games", "Music", "Photography", "Technology"], :prompt => "Select One"
-  .field
+  .field.row
+  .small-8.columns
     = f.label :start_date
     %br
-    = f.datetime_select :start_date
-  .field
+    = f.datetime_select :start_date, {minute_step: 30}
+  .field.row
+  .small-2.columns
     = f.label :end_date
     %br
-    = f.datetime_select :end_date
+    = f.datetime_select :end_date, {minute_step: 30}
   %h3 Breakpoints
   #breakpoints
     = f.fields_for :breakpoints do |breakpoint|
