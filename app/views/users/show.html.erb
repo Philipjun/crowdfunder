@@ -7,3 +7,10 @@
     <%= breakpoint.pledge %>
   <% end %>
 <% end %>
+
+<% pledge_total = 0 %>
+<p>Total amount of pledges</p>
+<% @user.pledges.each do |target| %>
+  <% pledge_total += target.breakpoint.pledge %>
+<% end %>
+<%= pledge_total %>
