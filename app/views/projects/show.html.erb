@@ -45,7 +45,7 @@
 
 			<!-- <div class="pledgeSub"> -->
 			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-			<%= submit_tag :Pledge, :id => "b1s" %>	
+			<%= f.submit "Pledge", class: "button" %>
 			<%= f.hidden_field :project_id, :value => @project.id %>
 			<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
 			<% end %>
@@ -64,8 +64,8 @@
 			<%= f.label :pledge%><br/>
 			<%= f.number_field :pledge%>
 		</div>
-		<div class= "action" id="b1s">
-			<%= f.submit :submit %>
+			<div class= "action" id="b1s">
+			<%= f.submit "Submit", class: "button" %>
 		</div>
 		<% end %>
 	</div>
