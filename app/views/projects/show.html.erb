@@ -9,21 +9,25 @@
 		Description: <%= @project.description %> <br />
 		Goal number: <%= @project.goal %> <br />
 		Total pledged: 
-		<div id="pledgeTotal">
+		<div id="pledgeTotal">			
 			<% if Pledge.first == nil %>
-			<%= 0 %>	
+			  <%= 0 %>
 			<% else %>
-			<% if @project.pledge_total == nil%>
-			<% total = 0 %>
-			<% else %>
-			<% total = @project.pledge_total %>
-			<% end %>
-			<% @project.breakpoints.each do |breakpoint| %>
-			<% total += breakpoint.pledge * breakpoint.pledges.count %>  
-			<% end %>
+			  <% if @project.pledge_total == nil%>
+			    <% total = 0 %>
+			  <% else %>
+			    <% total = @project.pledge_total %>
+			  <% end %>
+			  
+			  <!-- Calculation for total pledged and amount of backers -->
+			  <% @project.breakpoints.each do |breakpoint| %>
+			    <% total += breakpoint.pledge * breakpoint.pledges.count %>  
+			    <% pledge_total += breakpoint.pledges.count %>
+			  <% end %>
+			<% end %>	
 			<%= total %>
-			<% end %>
 		</div>
+
 		Start Date: <%= @project.start_date %> <br/>
 		End Date: <%= @project.end_date %>
 
@@ -34,16 +38,15 @@
 
 	</div>
 
-
 	<div class ="large-6 columns">
+
+		<!-- List tiers of breakpoint -->
 		<% @project.breakpoints.each do |breakpoint| %>
 		<div class= "pledge">
 			<h2><%= breakpoint.pledge_title %></h2>
 			<%= breakpoint.info %>
 			<p id="amount"><%= breakpoint.pledge %></p><br/>
-			<!-- </div> -->
-
-			<!-- <div class="pledgeSub"> -->
+		
 			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
 			<%= f.submit "Pledge", class: "button" %>
 			<%= f.hidden_field :project_id, :value => @project.id %>
