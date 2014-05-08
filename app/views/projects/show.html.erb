@@ -9,6 +9,7 @@
 
 Description: <%= @project.description %> <br />
 Goal number: <%= @project.goal %> <br />
+Project Owner: <%= @project.owner.email %>
 Total pledged: 
 <div id="pledgeTotal">
 	<% if Pledge.first == nil %>
