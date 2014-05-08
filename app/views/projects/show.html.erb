@@ -2,74 +2,73 @@
 <%= Time.now %>
 
 <div class="small-3 small-centered columns">
-<h1><%= @project.title %> </h1>
+	<h1><%= @project.title %> </h1>
 </div>
-
-<div class="right-panel">
-
-Description: <%= @project.description %> <br />
-Goal number: <%= @project.goal %> <br />
-Project Owner: <%= @project.owner.email %>
-Total pledged: 
-<div id="pledgeTotal">
-	<% if Pledge.first == nil %>
-	    <%= 0 %>	
-	  <% else %>
-	    <% if @project.pledge_total == nil%>
-	      <% total = 0 %>
-	    <% else %>
-	      <% total = @project.pledge_total %>
-	    <% end %>
-      <% @project.breakpoints.each do |breakpoint| %>
-	      <% total += breakpoint.pledge * breakpoint.pledges.count %>  
-	    <% end %>
-      <%= total %>
-	<% end %>
-</div>
-Start Date: <%= @project.start_date %> <br/>
-End Date: <%= @project.end_date %>
-
-<div id= "timeRemaining">
-	<% time_left = (@project.end_date - @project.start_date)/(86400) %>
-	There is <%= time_left %> days remaining to back this project!
-</div>
-
-</div>
-
-<%= form_for [@project, @breakpoint] do |f| %>
-	<div class= "field">
-		<%= f.label :pledge_title%><br/>
-		<%= f.text_field :pledge_title%>
-	</div>
-	<div class= "field">
-		<%= f.label :info%><br/>
-		<%= f.text_area :info%>
-	</div>
-	<div class= "field">
-		<%= f.label :pledge%><br/>
-		<%= f.number_field :pledge%>
-	</div>
-	<div class= "action" id="b1s">
-		<%= f.submit :submit %>
-</div>
-<% end %>
-
-<div id="projectBreakpoint">
-	<% @project.breakpoints.each do |breakpoint| %>
-	  <div class= "pledge">
-		  <h2><%= breakpoint.pledge_title %></h2>
-		  <%= breakpoint.info %>
-		  <p id="amount"><%= breakpoint.pledge %></p><br/>
-		<!-- </div> -->
-
-	  <!-- <div class="pledgeSub"> -->
-			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-			  <%= submit_tag :Pledge, :id => "b1s" %>	
-			  <%= f.hidden_field :project_id, :value => @project.id %>
-			  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+<div class = "row">
+	<div class="large-6 columns">
+		Description: <%= @project.description %> <br />
+		Goal number: <%= @project.goal %> <br />
+		Total pledged: 
+		<div id="pledgeTotal">
+			<% if Pledge.first == nil %>
+			<%= 0 %>	
+			<% else %>
+			<% if @project.pledge_total == nil%>
+			<% total = 0 %>
+			<% else %>
+			<% total = @project.pledge_total %>
 			<% end %>
-	  </div>
-	<% end %>
+			<% @project.breakpoints.each do |breakpoint| %>
+			<% total += breakpoint.pledge * breakpoint.pledges.count %>  
+			<% end %>
+			<%= total %>
+			<% end %>
+		</div>
+		Start Date: <%= @project.start_date %> <br/>
+		End Date: <%= @project.end_date %>
+
+		<div id= "timeRemaining">
+			<% time_left = (@project.end_date - @project.start_date)/(86400) %>
+			There is <%= time_left %> days remaining to back this project!
+		</div>
+
+	</div>
+
+
+	<div class ="large-6 columns">
+		<% @project.breakpoints.each do |breakpoint| %>
+		<div class= "pledge">
+			<h2><%= breakpoint.pledge_title %></h2>
+			<%= breakpoint.info %>
+			<p id="amount"><%= breakpoint.pledge %></p><br/>
+			<!-- </div> -->
+
+			<!-- <div class="pledgeSub"> -->
+			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
+			<%= submit_tag :Pledge, :id => "b1s" %>	
+			<%= f.hidden_field :project_id, :value => @project.id %>
+			<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+			<% end %>
+		</div>
+		<% end %>
+		<%= form_for [@project, @breakpoint] do |f| %>
+		<div class= "field">
+			<%= f.label :pledge_title%><br/>
+			<%= f.text_field :pledge_title%>
+		</div>
+		<div class= "field">
+			<%= f.label :info%><br/>
+			<%= f.text_area :info%>
+		</div>
+		<div class= "field">
+			<%= f.label :pledge%><br/>
+			<%= f.number_field :pledge%>
+		</div>
+		<div class= "action" id="b1s">
+			<%= f.submit :submit %>
+		</div>
+		<% end %>
+	</div>
 </div>
 
 
