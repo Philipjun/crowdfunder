@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @projects_owned = current_user.projects_owned
     @user = User.find(params[:id])
   end
 
