@@ -12,5 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require cocoon
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
+
+
+$(document).ready(function() {
+
+$('#pledgeSubmit').click(function() {
+    this.disabled = true;
+
+$('#pledgeSubmit').submit(function() {
+    submitForm(this);    
+
+    });
+  });
+});

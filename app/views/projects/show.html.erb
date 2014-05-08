@@ -40,9 +40,9 @@ End Date: <%= @project.end_date %>
 		<%= f.label :pledge%><br/>
 		<%= f.number_field :pledge%>
 	</div>
-	<div class= "action">
-		<%= f.submit :submit%>
-	</div>
+	<div class= "action" id="b1s">
+		<%= f.submit :submit %>
+</div>
 <% end %>
 
 <div id="projectBreakpoint">
@@ -55,7 +55,7 @@ End Date: <%= @project.end_date %>
 
 	  <!-- <div class="pledgeSub"> -->
 			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-			  <%= submit_tag :Pledge %>	
+			  <%= submit_tag :Pledge, :id => "b1s" %>	
 			  <%= f.hidden_field :project_id, :value => @project.id %>
 			  <%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
 			<% end %>
