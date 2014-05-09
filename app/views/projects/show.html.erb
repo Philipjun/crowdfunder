@@ -1,5 +1,5 @@
 <%= link_to "Back to Projects", projects_url %><br/>
-<%= Time.now %>
+
 
 <div class="small-5 small-centered columns">
 	<h1><%= @project.title %> </h1>
@@ -16,9 +16,17 @@
 			<%= @project.current_funding %>
 		</div>
 		</h1>
+			
+		<!-- Update amount of pledges by ajax -->
 		
-		<h3>Pledge status</h3>
-		
+		<h1>
+			<div class="pledgesnumber">
+				<%= @project.number_of_pledges %> 
+			</div>
+		</h1>
+
+		Pledges
+		<br/>
 
 <!-- if funded 100% show progress in green -->
 
@@ -32,16 +40,7 @@
 			</div>
 		<% end %>
 
-		<!-- Update amount of pledges by ajax -->
-		
-		<h1>
-			<div class="pledgesnumber">
-				<%= @project.number_of_pledges %> 
-			</div>
-		</h1>
-
-		Pledges
-		<br/>
+			<h3>Pledge status</h3>
 
 
 		<div id= "timeRemaining">
