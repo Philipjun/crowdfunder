@@ -6,7 +6,7 @@
 </div>
 <div class = "row">
 	<div class="large-9 columns">
-		<h3> Description: <%= @project.description %> </h3> 
+		<h2> Description: <%= @project.description %> </h2> 
 		<br />
 		<h1><%= @project.goal %></h1>Goal <br />
 		
@@ -19,6 +19,7 @@
 		
 		<h3>Pledge status</h3>
 		
+
 <!-- if funded 100% show progress in green -->
 
 		<% if @project.percent_funded == 100 %>
