@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   has_many :projects, through: :pledges
   has_many :comments
  
-  validates_presence_of :name
-  validates :password, :password_confirmation, presence: true
+  validates :name, :email, :password, :password_confirmation, presence: true
   validates :password, confirmation: true
   validates :email, uniqueness: true
 end
