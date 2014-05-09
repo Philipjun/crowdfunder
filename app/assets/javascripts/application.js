@@ -18,9 +18,9 @@
 
 $(function(){ $(document).foundation(); });
 
-
   $(document).ready(function() {
 
+// Delete the pledgeSubmit stuff unless someone finds a use
     $('#pledgeSubmit').click(function() {
         this.disabled = true;
 
@@ -30,7 +30,7 @@ $(function(){ $(document).foundation(); });
         });
       });
 
-
+// Endless Scrolling  
     jQuery(function() {
       if ($('.pagination').length) {
         $(window).scroll(function() {
@@ -40,11 +40,6 @@ $(function(){ $(document).foundation(); });
             return $.getScript(url);
           }
         });
-      }
-
-  });
-
-
-
-  
+    }
+  }); 
 });
