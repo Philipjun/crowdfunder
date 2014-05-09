@@ -44,12 +44,14 @@
       </section>
     </nav>
   </div>
-  <id="notice"><%= flash[:notice] %>
-  <id="alert"><%= flash[:alert] %>
-<div class="container2">
-  <%= yield %>
-</div>
+  
+  <%= render 'layouts/messages' %>
+  
 
-<%= javascript_include_tag "application" %>
+  <div class="container2">
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
