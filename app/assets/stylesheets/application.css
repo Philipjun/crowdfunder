@@ -10,42 +10,5 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
  *= require_tree .
  */
-body {
-	margin: 0;
-	background-color: #E5DBCB;
-}
-.left-panel{
-  float: left;
-  position: 100px 100px 200px 200px;
-  padding: 12px;
-  background-color: white;
-  height: 70%;
-  width: 30%;
-  margin-left: 30px;
-
-}
-
-#projectBreakpoints {
-	float: right;
-	margin-right: 100px;
-	width: 40%;
-}
-
-.container2 {
-	/*height: 100%;*/
-  width: 960px;
-  margin: 90px auto 0 auto;
-  border-radius: 5px;
-  padding: 10px;
-  background: #FFFFFF;
-  font-family: Geneva;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}

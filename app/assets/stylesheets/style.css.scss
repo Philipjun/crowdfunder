@@ -1,0 +1,53 @@
+.left-panel{
+  float: left;
+  position: 100px 100px 200px 200px;
+  padding: 12px;
+  background-color: white;
+  height: 70%;
+  width: 30%;
+  margin-left: 30px;
+
+}
+
+#projectBreakpoints {
+  float: right;
+  margin-right: 100px;
+  width: 40%;
+}
+
+.container2 {
+  /*height: 100%;*/
+  width: 960px;
+  margin: 90px auto 0 auto;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 75px;
+  background: #FFFFFF;
+  font-family: Geneva;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.action {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-bottom: 50px;
+  clear: both;
+}
+
+.projects {
+  clear: both;
+}
+
+.projectinfo textarea {
+  height: 150px;
+}
+
+.pledgeinfo textarea {
+  height: 100px;
+}
