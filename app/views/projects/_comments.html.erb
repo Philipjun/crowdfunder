@@ -1,0 +1,12 @@
+<div id="comment-list">
+    <p>Comments for <%= @project.title %></p>
+    <% @project.comments.each do |x| %>
+      <p>
+        <%= x.comment_text %>
+        <br>
+          <% if x.user_id != nil %>
+          <em> by <%= x.user.email %></em>  
+          Added on: <%= x.created_at %>
+          <% end %>
+      </p>
+    <% end %>
