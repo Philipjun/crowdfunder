@@ -34,12 +34,10 @@
 		</div>
 		<br/>
 
-		Start Date: <%= @project.start_date %> <br/>
-		End Date: <%= @project.end_date %>
 
 		<div id= "timeRemaining">
 			<% time_left = (@project.end_date - @project.start_date)/(86400) %>
-			There is <%= time_left %> days remaining to back this project!
+			There are <%= time_left %> days remaining to back this project!
 		</div>
 	</div>
 
@@ -60,25 +58,6 @@
 		</ul>
 		<%end%>
 
-
-
-		<%= form_for [@project, @breakpoint] do |f| %>
-		<div class= "field">
-			<%= f.label :pledge_title%><br/>
-			<%= f.text_field :pledge_title%>
-		</div>
-		<div class= "field">
-			<%= f.label :info%><br/>
-			<%= f.text_area :info%>
-		</div>
-		<div class= "field">
-			<%= f.label :pledge%><br/>
-			<%= f.number_field :pledge%>
-		</div>
-		<div class= "action" id="b1s">
-			<%= f.submit "Submit", class: "button" %>
-		</div>
-		<% end %>
 
 	</div>
 	<% if current_user %>
