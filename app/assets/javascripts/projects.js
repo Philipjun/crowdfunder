@@ -3,14 +3,27 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-// $(document).ready(function() {
-//   // Replaces total amount pledged when pledge clicked
-// 	var total = Number($('#pledgeTotal').text());
-//   $(".pledgeSubmit").click(function() {
-//     // var amount = Number(($(this).parent().children().prev('p').text()));
-//     var amount = Number(($(this).parent().children().prev('.price').text()));
-//     total += amount;
-//     console.log(($(this).parent().children().prev('.price').text()));
-//     $("#pledgeTotal").text(total);
-//   });
-// });
+$(document).ready(function() {
+  $('#category-select').submit(function(event) {
+    even.preventDefault();
+    var searchValue = $('#search').val();
+
+    $.getScript('/projects?search=' + searchValue);
+  });
+});
+
+$(document).ready(function() {
+
+// Endless Scrolling  
+    jQuery(function() {
+      if ($('.pagination').length) {
+        $(window).scroll(function() {
+          var url = $('.pagination span.next').children().attr('href');
+          if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+            $('.pagination').text("Fetching more products...");
+            return $.getScript(url);
+          }
+        });
+    }
+  }); 
+});
