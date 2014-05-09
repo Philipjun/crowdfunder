@@ -4,3 +4,6 @@ if (<%= @project.percent_funded %> == 100) {
 
 $("#pledgeTotal").html(<%= @project.current_funding %>);
 $("span.meter").css("width", '<%= "#{@project.percent_funded}%" %>');
+
+
+$(".pledgesnumber").html(<%= @project.number_of_pledges %>);

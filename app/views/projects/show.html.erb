@@ -28,7 +28,12 @@
 
 		<!-- Update amount of pledges by ajax -->
 		Amount of pledges:
-		<%= @project.number_of_pledges %> <br/>
+		
+		<div class="pledgesnumber">
+			<%= @project.number_of_pledges %> 
+		</div>
+		<br/>
+
 		Start Date: <%= @project.start_date %> <br/>
 		End Date: <%= @project.end_date %>
 

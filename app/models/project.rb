@@ -25,4 +25,7 @@ class Project < ActiveRecord::Base
 	def number_of_pledges
 		pledges.count
 	end
+
+
+
 end
