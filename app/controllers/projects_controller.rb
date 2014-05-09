@@ -3,15 +3,15 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = if params[:search]
-      Project.where(category:params[:search])
+      Project.where(category: params[:search])
     else
       Project.all
    end
-   @projects = Project.order('projects.end_date DESC').page(params[:page])
+   @projects = @projects.order('projects.end_date DESC').page(params[:page])
 
     respond_to do |format|
-      format.js # allows the controller to respond to Javascript
       format.html
+      format.js # allows the controller to respond to Javascript
     end
   end
 
