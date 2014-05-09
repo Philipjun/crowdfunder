@@ -1,32 +1,27 @@
 <%= link_to "Back to Projects", projects_url %><br/>
 <%= Time.now %>
 
-<div class="small-3 small-centered columns">
+<div class="small-5 small-centered columns">
 	<h1><%= @project.title %> </h1>
 </div>
 <div class = "row">
-	<div class="large-6 columns">
+	<div class="large-9 columns">
 		Description: <%= @project.description %> <br />
 		Goal number: <%= @project.goal %> <br />
 		Total pledged: 
 		
 		<div id="pledgeTotal">
-		  <% number_of_pledges = 0 %>			
-			<% if Pledge.first == nil %>
-				<%= 0 %>	
-			  <% total = 0 %>
-			<% else %>
-				<% total = 0 %>		
-				<% @project.breakpoints.each do |breakpoint| %>
-					<% total += breakpoint.pledge * breakpoint.pledges.count %>  
-					<% number_of_pledges += breakpoint.pledges.count %>
-				<% end %>
-				<%= total %> <br />
-			<% end %>		
+			<%= @project.current_funding %>
+		</div>
+
+
+
+		<div class="progress">
+			<span class="meter" style="width:<%=@project.percent_funded%>%"></span>
 		</div>
 		<!-- Update amount of pledges by ajax -->
-      Amount of pledges:
-			<%= number_of_pledges %> <br />
+		Amount of pledges:
+		<%= @project.number_of_pledges %> <br/>
 		Start Date: <%= @project.start_date %> <br/>
 		End Date: <%= @project.end_date %>
 
@@ -36,21 +31,24 @@
 		</div>
 	</div>
 
-	<div class ="large-6 columns">
-		<!-- List tiers of breakpoint -->
+	<div class ="small-3 columns">
 		<% @project.breakpoints.each do |breakpoint| %>
-		<div class= "pledge">
-			<h2><%= breakpoint.pledge_title %></h2>
-			<%= breakpoint.info %>
-			<p id="amount"><%= breakpoint.pledge %></p><br/>
-		
-			<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-			<%= f.submit "Pledge", class: "button" %>
-			<%= f.hidden_field :project_id, :value => @project.id %>
-			<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
-			<% end %>
-		</div>
-		<% end %>
+		<div class = "pledge">
+			<ul class="pricing-table">
+				<li class="title"><%= breakpoint.pledge_title %></li>
+				<li class="price"><%= breakpoint.pledge %></li>
+				<li class="description"><%= breakpoint.info%></li>
+
+				<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
+				<li class="cta-button"><%= f.submit "Pledge", class: "button tiny pledgeSubmit" %></li>
+				<%= f.hidden_field :project_id, :value => @project.id %>
+				<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
+				<% end %>
+			</div>
+		</ul>
+		<%end%>
+
+
 
 		<%= form_for [@project, @breakpoint] do |f| %>
 		<div class= "field">
@@ -90,8 +88,9 @@
 			</div>
 		<% end %>
 
+
 	<% else %>
-		<p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
+	<p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 	<% end %>
 </div>
 

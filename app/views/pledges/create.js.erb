@@ -1,0 +1,2 @@
+$("#pledgeTotal").html(<%= @project.current_funding %>);
+$("span.meter").css("width", '<%= "#{@project.percent_funded}%" %>');
