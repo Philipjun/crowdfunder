@@ -9,7 +9,8 @@
 		Description: <%= @project.description %> <br />
 		Goal number: <%= @project.goal %> <br />
 		Total pledged: 
-		<div id="pledgeTotal">			
+		<div id="pledgeTotal">
+		  <% number_of_pledges = 0 %>			
 			<% if Pledge.first == nil %>
 
 				<%= 0 %>	
@@ -20,13 +21,17 @@
 
 				<% @project.breakpoints.each do |breakpoint| %>
 					<% total += breakpoint.pledge * breakpoint.pledges.count %>  
+					<% number_of_pledges += breakpoint.pledges.count %>
 				<% end %>
-				<%= total %>
+				<%= total %> <br />
+			
 			<% end %>
 			
 
 		</div>
-
+		<!-- Update amount of pledges by ajax -->
+      Amount of pledges:
+			<%= number_of_pledges %> <br />
 		Start Date: <%= @project.start_date %> <br/>
 		End Date: <%= @project.end_date %>
 
