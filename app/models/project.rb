@@ -1,7 +1,22 @@
 class Project < ActiveRecord::Base
-  belongs_to :owner, class_name: "User"
-  has_many :breakpoints
-  has_many :pledges
-  has_many :comments
-  accepts_nested_attributes_for :breakpoints, reject_if: :all_blank, allow_destroy: true
+	belongs_to :owner, class_name: "User"
+	has_many :breakpoints
+	has_many :pledges
+	has_many :comments
+	accepts_nested_attributes_for :breakpoints, reject_if: :all_blank, allow_destroy: true
+
+	def current_funding
+		total = 0 		
+		breakpoints.each do |breakpoint|
+			total += breakpoint.pledge * breakpoint.pledges.count  
+		end
+		total
+	end
+	def percent_funded
+		(current_funding.to_f/goal)*100
+	end
+
+	def number_of_pledges
+		pledges.count
+	end
 end
