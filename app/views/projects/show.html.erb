@@ -6,13 +6,19 @@
 </div>
 <div class = "row">
 	<div class="large-9 columns">
-		Description: <%= @project.description %> <br />
-		Goal number: <%= @project.goal %> <br />
-		Total pledged: 
+		<h3> Description: <%= @project.description %> </h3> 
+		<br />
+		<h1><%= @project.goal %></h1>Goal <br />
 		
+		
+		<h1>
 		<div id="pledgeTotal">
 			<%= @project.current_funding %>
 		</div>
+		</h1>
+		
+		<h3>Pledge status</h3>
+		
 
 <!-- if funded 100% show progress in green -->
 
@@ -27,19 +33,27 @@
 		<% end %>
 
 		<!-- Update amount of pledges by ajax -->
-		Amount of pledges:
 		
-		<div class="pledgesnumber">
-			<%= @project.number_of_pledges %> 
-		</div>
+		<h1>
+			<div class="pledgesnumber">
+				<%= @project.number_of_pledges %> 
+			</div>
+		</h1>
+
+		Pledges
 		<br/>
 
 
 		<div id= "timeRemaining">
 			<% time_left = (@project.end_date - @project.start_date)/(86400) %>
-			There are <%= time_left %> days remaining to back this project!
+			<H1>
+			 <%= time_left %>
+			 </h1>
+			 Days left
 		</div>
 	</div>
+
+	<br />
 
 	<div class ="small-3 columns">
 		<% @project.breakpoints.each do |breakpoint| %>
