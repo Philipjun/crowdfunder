@@ -7,26 +7,27 @@
   <div class="small-3 columns left">
     <%= select_tag :search, options_for_select([["Art","Art"], ["Comics", "Comics"], ["Design", "Design"], ["Film & Video", "Film & Video"], ["Games", "Games"], ["Music", "Music"], ["Photography", "Photography"], ["Technology", "Technology"]], params[:search]) %>
   </div>
+
   <div class="action">
-    <%= submit_tag "Search", class: "button tiny left inline" %>
+      <%= submit_tag "Search", class: "button tiny left inline" %>
   </div>
+
 <% end %>
+
 <div class="projects">
-<% @projects.each do |project| %>
-<p>
-	<%= link_to project.title, project %><br />
-	<%= project.description %> <br />
-	<%= project.goal %>
-</p>
 
-<% end %>
-<<<<<<< HEAD
+  <% @projects.each do |project| %>
+    <p>
+    	<%= link_to project.title, project %><br />
+    	<%= project.description %> <br />
+    	<%= project.goal %>
+    </p>
+  <% end %>
 
-<div id="projects">
-  <%= render @projects %>
-</div>
+  <div id="projects">
+    <%= render @projects %>
+  </div>
 
 <!-- outputs several pagination links such as « First ‹ Prev ... 2 3 4 5 6 7 8 9 10 ... Next › Last » -->
-<%= paginate @projects %>
-=======
+  <%= paginate @projects %>
 </div>
