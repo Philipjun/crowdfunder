@@ -9,10 +9,10 @@ class ProjectsController < ApplicationController
    end
    @projects = Project.order('projects.end_date DESC').page(params[:page])
 
-     respond_to do |format|
-    format.js # allows the controller to respond to Javascript
-    format.html
-  end
+    respond_to do |format|
+      format.js # allows the controller to respond to Javascript
+      format.html
+    end
   end
 
 
