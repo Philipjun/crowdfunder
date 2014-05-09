@@ -14,11 +14,18 @@
 			<%= @project.current_funding %>
 		</div>
 
+<!-- if funded 100% show progress in green -->
 
+		<% if @project.percent_funded == 100 %>
+			<div class="progress success">
+				<span class="meter" style="width:<%=@project.percent_funded%>%">Project Funded!</span>
+			</div>
+		<% else %>
+			<div class="progress">
+				<span class="meter" style="width:<%=@project.percent_funded%>%"></span>
+			</div>
+		<% end %>
 
-		<div class="progress">
-			<span class="meter" style="width:<%=@project.percent_funded%>%"></span>
-		</div>
 		<!-- Update amount of pledges by ajax -->
 		Amount of pledges:
 		<%= @project.number_of_pledges %> <br/>

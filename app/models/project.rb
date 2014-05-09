@@ -12,8 +12,14 @@ class Project < ActiveRecord::Base
 		end
 		total
 	end
+
+	
 	def percent_funded
-		(current_funding.to_f/goal)*100
+		total = (current_funding.to_f/goal)*100
+		if total >= 100
+			total = 100
+		end
+		total
 	end
 
 	def number_of_pledges
