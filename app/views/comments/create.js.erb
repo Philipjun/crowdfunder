@@ -1,1 +1,7 @@
-$("#comment-list").html("<%= escape_javascript(render(:partial => 'projects/comments')) %>")
+<% if @comment.errors.present? %>
+  $(".comment-form-errors").html("<%= escape_javascript(render(:partial => '/projects/comment_form_errors')) %>");
+<% else %>
+  $(".comment-form-errors").html("");
+  $("#comment-list").html("<%= escape_javascript(render(:partial => '/projects/comments')) %>");
+  $(".new_comment")[0].reset();
+<% end %>

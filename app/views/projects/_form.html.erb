@@ -43,9 +43,9 @@
   <h3>Breakpoints</h3>
   <div id="breakpoints">
     <%= f.fields_for :breakpoints do |breakpoint| %>
-      <div class="form-errors">
+      
         <%= render :partial => "/projects/breakpoint_form_errors" %>
-      </div>
+      
 
       <%= render 'breakpoint_fields', :f => breakpoint %>
     <% end %>
