@@ -1,12 +1,14 @@
 <div id="comment-list">
-    <p>Comments for <%= @project.title %></p>
-    <% @project.comments.each do |x| %>
-      <p>
-        <%= x.comment_text %>
-        <br>
-          <% if x.user_id != nil %>
-          <em> by <%= x.user.name %></em>  
-          
-          <% end %>
-      </p>
-    <% end %>
+  <p>Comments for <%= @project.title %></p>
+   
+  <% @project.comments.each do |x| %>
+    <p>
+      <%= x.comment_text %>
+      <br>
+      <% if x.user_id != nil %>
+        <em> by <%= x.user.name %></em>  
+        
+      <% end %>
+    </p>
+  <% end %>
+</div>

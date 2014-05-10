@@ -92,6 +92,10 @@
 	<h4>New Comment</h4>
 
 		<%= form_for [@project, @comment], :remote => true do |f| %>
+      <div class="form-errors">
+        <%= render :partial => "/projects/comment_form_errors" %>
+      </div>
+
 			<div class="field">
 				<%= f.label :comment_text %><br/>
 				<%= f.text_area :comment_text %>
@@ -99,6 +103,8 @@
 			<div class= "action" id="b1s">
 			<%= f.submit "Submit", class: "button" %>
 			</div>
+
+
 		<% end %>
 
 
