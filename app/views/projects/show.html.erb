@@ -77,13 +77,13 @@
 
 	<h3>Comments</h3>
 	<div id="review-list">
-		<%= render :partial => "comments" %>
+		<%= render :partial => "/projects/comments" %>
 	</div>
 
 	<h4>New Comment</h4>
 
 		<%= form_for [@project, @comment], :remote => true do |f| %>
-      <div class="form-errors">
+      <div class="comment-form-errors">
         <%= render :partial => "/projects/comment_form_errors" %>
       </div>
 
@@ -92,10 +92,8 @@
 				<%= f.text_area :comment_text %>
 			</div>
 			<div class= "action" id="b1s">
-			<%= f.submit "Submit", class: "button" %>
+			<%= f.submit "Submit", class: "button new_comment" %>
 			</div>
-
-
 		<% end %>
 
 
@@ -103,5 +101,8 @@
 	<p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 	<% end %>
 </div>
+
+
+
 
 
