@@ -1,5 +1,9 @@
 <%= form_for @user do |f| %>
-   <div class="field">
+  <div class="form-errors">
+    <%= render :partial => "/users/user_form_errors" %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br/>
     <%= f.text_field :name %>
   </div>

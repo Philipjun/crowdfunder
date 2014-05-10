@@ -1,5 +1,5 @@
 <%= form_for @project do |f| %>
-  <div id="projects-form-errors">
+  <div class="form-errors">
     <%= render :partial => "/projects/projects_form_errors" %>
   </div>
   <div class="row">
@@ -43,6 +43,10 @@
   <h3>Breakpoints</h3>
   <div id="breakpoints">
     <%= f.fields_for :breakpoints do |breakpoint| %>
+      <div class="form-errors">
+        <%= render :partial => "/projects/breakpoint_form_errors" %>
+      </div>
+
       <%= render 'breakpoint_fields', :f => breakpoint %>
     <% end %>
     <div class="links">
