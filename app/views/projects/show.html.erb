@@ -66,7 +66,7 @@
 				<li class="price"><%= breakpoint.pledge %></li>
 				<li class="description"><%= breakpoint.info%></li>
 
-					<div class= cush">
+					<div class= "cush">
 				<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
 				<li class="cta-button">
 				<%= f.submit "Pledge", class: "alert-box success radius" %></li>
