@@ -6,7 +6,7 @@
 </div>
 <div class = "row">
 	<div class="large-9 columns">
-		<h2> Description: <%= @project.description %> </h2> 
+		<h2> <%= @project.description %> </h2> 
 		<br />
 		<h1><%= @project.goal %></h1>Goal <br />
 		
@@ -54,21 +54,30 @@
 
 	<br />
 
+
 	<div class ="small-3 columns">
-		<% @project.breakpoints.each do |breakpoint| %>
 		<div class = "pledge">
-			<ul class="pricing-table">
+		<% @project.breakpoints.each do |breakpoint| %>
+			
+				<a>
+				<ul class="pricing-table">
+
 				<li class="title"><%= breakpoint.pledge_title %></li>
 				<li class="price"><%= breakpoint.pledge %></li>
 				<li class="description"><%= breakpoint.info%></li>
 
+					<div class= cush">
 				<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-				<li class="cta-button"><%= f.submit "Pledge", class: "button tiny pledgeSubmit" %></li>
+				<li class="cta-button">
+				<%= f.submit "Pledge", class: "alert-box success radius" %></li>
 				<%= f.hidden_field :project_id, :value => @project.id %>
 				<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
 				<% end %>
+			</a>
 			</div>
 		</ul>
+
+	</div>
 		<%end%>
 
 

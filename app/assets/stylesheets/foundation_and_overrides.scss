@@ -55,7 +55,7 @@ $body-bg: #F7FAFA;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #2BDE73;
+// $primary-color: #252525;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -267,6 +267,9 @@ $alert-close-opacity: 0.3;
 $alert-close-opacity-hover: 0.5;
 $alert-close-padding: 9px 6px 4px;
 
+
+
+
 // We use this to control border radius
 // $alert-radius: $global-radius;
 
@@ -346,7 +349,7 @@ $alert-close-padding: 9px 6px 4px;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border styles.
 // $button-border-width: 0px;
