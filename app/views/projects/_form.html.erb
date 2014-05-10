@@ -1,4 +1,7 @@
 <%= form_for @project do |f| %>
+  <div id="projects-form-errors">
+    <%= render :partial => "/projects/projects_form_errors" %>
+  </div>
   <div class="row">
     <div class="small-9 columns">
       <%= f.label :title %><br>
