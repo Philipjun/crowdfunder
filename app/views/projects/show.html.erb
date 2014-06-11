@@ -69,11 +69,12 @@
 
 						<!-- <div class= "break"> -->
 					<%= form_for [@project, @pledge], :remote => true, :html => {:class => "pledgeSubmit"} do |f| %>
-					<li class="cta-button">
-					<%= f.submit "Pledge", class: "alert-box success radius" %></li>
+					
+					<%= f.submit "Pledge", class: "alert-box-pledge" %>
 					<%= f.hidden_field :project_id, :value => @project.id %>
 					<%= f.hidden_field :breakpoint_id,  :value => breakpoint.id %>
 					<% end %>
+					
 				</ul>
 				</a>
 			<%end%>
