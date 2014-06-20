@@ -9,6 +9,8 @@ class Project < ActiveRecord::Base
 	validates :title, :description, :category, :start_date, :end_date, presence: true
 	validates :goal, numericality: { only_integer: true }
 
+	mount_uploader :image, ImageUploader
+
 	def current_funding
 		total = 0 		
 		breakpoints.each do |breakpoint|
