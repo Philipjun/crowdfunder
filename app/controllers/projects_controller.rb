@@ -32,6 +32,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+
   def show
     @project = Project.find(params[:id])
     @breakpoints = Breakpoint.all
@@ -47,8 +48,18 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-
+    @project = Project.find(params[:id])
   end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(project_params)
+      redirect_to project_path(@project)
+    else
+      render :edit
+    end
+  end
+
 
 
 private

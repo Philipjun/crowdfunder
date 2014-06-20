@@ -1,6 +1,6 @@
 <%= link_to "Back to Projects", projects_url %><br/>
 
-<%= image_tag project.image_url.to_s %>
+<%= image_tag @project.image_url %>
 
 <div class="small-5 small-centered columns">
 	<h1><%= @project.title %> </h1>
@@ -105,6 +105,7 @@
 
 			<div class= "action" id="b1s">
 			<%= f.submit "Submit", class: "alert-box success radius" %>
+			
 			</div>
 		</div>
 

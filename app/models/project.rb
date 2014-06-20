@@ -6,10 +6,11 @@ class Project < ActiveRecord::Base
 	has_many :comments
 	accepts_nested_attributes_for :breakpoints, reject_if: :all_blank, allow_destroy: true
 
-	validates :title, :description, :category, :start_date, :end_date, presence: true
-	validates :goal, numericality: { only_integer: true }
 
 	mount_uploader :image, ImageUploader
+	
+	validates :title, :description, :category, :start_date, :end_date, presence: true
+	validates :goal, numericality: { only_integer: true }
 
 	def current_funding
 		total = 0 		

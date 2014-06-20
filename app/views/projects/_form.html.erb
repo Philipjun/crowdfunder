@@ -1,4 +1,5 @@
-<%= form_for @project, :html => {:multipart => true } do |f| %>
+<%= form_for @project, html: { multipart: true } do |f| %>
+
   <div class="form-errors">
     <%= render :partial => "/projects/projects_form_errors" %>
   </div>
