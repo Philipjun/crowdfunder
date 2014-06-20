@@ -47,6 +47,8 @@ gem 'foundation-rails'
 
 gem 'faker'
 
+gem 'rmagick'
+
 gem 'kaminari', '~> 0.15.1'
 
 # Use ActiveModel has_secure_password
