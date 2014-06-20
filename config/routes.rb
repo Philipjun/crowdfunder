@@ -2,7 +2,9 @@ Crowdfunder::Application.routes.draw do
   get "comments/show"
   get "comments/create"
   get "comments/destroy"
+  
   root 'projects#index'
+
 
   resources :projects do
     resources :breakpoints

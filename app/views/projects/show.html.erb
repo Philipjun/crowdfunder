@@ -1,4 +1,5 @@
 <%= link_to "Back to Projects", projects_url %><br/>
+<%= link_to "Edit Project", action: :edit %><br/>
 
 <%= image_tag @project.image_url %>
 
@@ -105,7 +106,7 @@
 
 			<div class= "action" id="b1s">
 			<%= f.submit "Submit", class: "alert-box success radius" %>
-			
+
 			</div>
 		</div>
 
@@ -116,12 +117,3 @@
 	<% else %>
 	<p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 	<% end %>
-
-
-
-
-
-
-
-
-
