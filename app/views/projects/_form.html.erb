@@ -1,8 +1,6 @@
 <%= form_for @project, html: { multipart: true } do |f| %>
 
-<!--   <div class="form-errors">
-    <%= render :partial => "/projects/projects_form_errors" %>
-  </div> -->
+
   <div class="row">
     <div class="small-9 columns">
       <%= f.label :title %><br>
@@ -56,6 +54,12 @@
 
     <h4>Image uploader</h4>
     <%= f.file_field :image %>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+      <label>
+      <%= f.check_box :remove_image %>
+      Remove image
+    </label>
     
   <div class="action"><%= f.submit class: "button medium left" %></div>
   </div>
