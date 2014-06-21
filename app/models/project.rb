@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
 	has_many :users, :through => :pledges
 	has_many :comments
 	accepts_nested_attributes_for :breakpoints, reject_if: :all_blank, allow_destroy: true
-
+	
 	mount_uploader :image, ImageUploader
 
 	validates :title, :description, :category, :start_date, :end_date, presence: true
