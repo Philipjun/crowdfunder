@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+
 	belongs_to :owner, class_name: "User"
 	has_many :breakpoints
 	has_many :pledges
@@ -32,7 +33,10 @@ class Project < ActiveRecord::Base
 		pledges.count
 	end
 
-
+private
+  def project_params
+    params.require(:project).permit(:image, :remote_image_url)
+  end	
 
 
 end
