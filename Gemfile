@@ -47,9 +47,12 @@ gem 'foundation-rails'
 
 gem 'faker'
 
-gem 'rmagick'
+# gem 'rmagick'
+gem 'mini_magick'
 
 gem 'kaminari', '~> 0.15.1'
+
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
