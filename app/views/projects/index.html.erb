@@ -3,9 +3,8 @@
 <ul class="example-orbit-content" data-orbit>
   <li data-orbit-slide="headline-1">
     <div>
-      <center><h2>Ocean Vacation</h2></center>
+      <center><h2><%= Project.last.title %></h2></center>
       <a href="projects/101">
-
       <%= image_tag Project.last.image.to_s %>
       </a>
       
